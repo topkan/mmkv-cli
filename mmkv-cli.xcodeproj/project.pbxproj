@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		595832736B29A1C38458C4D4 /* libPods-mmkv-cli.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46401A14269C9CC2BA72440F /* libPods-mmkv-cli.a */; };
 		E6CE52E123B7E5B400EA7651 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CE52E023B7E5B400EA7651 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,8 +24,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		304F39F89BC0A940DC1F873C /* Pods-mmkv-cli.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mmkv-cli.debug.xcconfig"; path = "Target Support Files/Pods-mmkv-cli/Pods-mmkv-cli.debug.xcconfig"; sourceTree = "<group>"; };
+		46401A14269C9CC2BA72440F /* libPods-mmkv-cli.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mmkv-cli.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9826A1B5140DFCD5B1AE93E0 /* Pods-mmkv-cli.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mmkv-cli.release.xcconfig"; path = "Target Support Files/Pods-mmkv-cli/Pods-mmkv-cli.release.xcconfig"; sourceTree = "<group>"; };
 		E6CE52DD23B7E5B400EA7651 /* mmkv-cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "mmkv-cli"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CE52E023B7E5B400EA7651 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		E6CE52E723B7F75000EA7651 /* mmkv-cli-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mmkv-cli-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				595832736B29A1C38458C4D4 /* libPods-mmkv-cli.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2200005625A2C81FD028ACC8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				304F39F89BC0A940DC1F873C /* Pods-mmkv-cli.debug.xcconfig */,
+				9826A1B5140DFCD5B1AE93E0 /* Pods-mmkv-cli.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		315E6BF8241F3A8B18748EAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46401A14269C9CC2BA72440F /* libPods-mmkv-cli.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E6CE52D423B7E5B400EA7651 = {
 			isa = PBXGroup;
 			children = (
 				E6CE52DF23B7E5B400EA7651 /* mmkv-cli */,
 				E6CE52DE23B7E5B400EA7651 /* Products */,
+				2200005625A2C81FD028ACC8 /* Pods */,
+				315E6BF8241F3A8B18748EAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				E6CE52E023B7E5B400EA7651 /* main.swift */,
+				E6CE52E723B7F75000EA7651 /* mmkv-cli-Bridging-Header.h */,
 			);
 			path = "mmkv-cli";
 			sourceTree = "<group>";
@@ -69,6 +95,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6CE52E423B7E5B400EA7651 /* Build configuration list for PBXNativeTarget "mmkv-cli" */;
 			buildPhases = (
+				9D8B6CE331B118410C76AF84 /* [CP] Check Pods Manifest.lock */,
 				E6CE52D923B7E5B400EA7651 /* Sources */,
 				E6CE52DA23B7E5B400EA7651 /* Frameworks */,
 				E6CE52DB23B7E5B400EA7651 /* CopyFiles */,
@@ -94,6 +121,7 @@
 				TargetAttributes = {
 					E6CE52DC23B7E5B400EA7651 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -114,6 +142,31 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9D8B6CE331B118410C76AF84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mmkv-cli-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E6CE52D923B7E5B400EA7651 /* Sources */ = {
@@ -242,22 +295,39 @@
 		};
 		E6CE52E523B7E5B400EA7651 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 304F39F89BC0A940DC1F873C /* Pods-mmkv-cli.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8H42QSQ3L4;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mmkv-cli/mmkv-cli-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		E6CE52E623B7E5B400EA7651 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9826A1B5140DFCD5B1AE93E0 /* Pods-mmkv-cli.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8H42QSQ3L4;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mmkv-cli/mmkv-cli-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

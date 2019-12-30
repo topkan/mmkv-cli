@@ -1,0 +1,20 @@
+PODS:
+  - Commander (0.9.1)
+  - MMKV (1.0.23)
+
+DEPENDENCIES:
+  - Commander
+  - MMKV
+
+SPEC REPOS:
+  trunk:
+    - Commander
+    - MMKV
+
+SPEC CHECKSUMS:
+  Commander: 723330cf3697b604c00afb9db9576be81a03c501
+  MMKV: 031ae51aedc0af1b250922f7ed8a6b6ee2f94c4c
+
+PODFILE CHECKSUM: eb24ab0a20f703e668d8cabf3d11ac1d4cf900d6
+
+COCOAPODS: 1.8.4
