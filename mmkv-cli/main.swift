@@ -18,6 +18,7 @@ Group {
   ) { path, id in
     let mmkv = MMKV.init(mmapID: id, relativePath: path)!
     mmkv.enumerateKeys() { key, stop in print(key) }
+    exit(EXIT_SUCCESS)
   }
 
   $0.command("get",
@@ -28,8 +29,9 @@ Group {
              description: "Get key value"
   ) { path, id, prettify, key in
     let mmkv = MMKV.init(mmapID: id, relativePath: path)!
-    let value = mmkv.string(forKey: key) ?? "no value"
+    guard let value = mmkv.string(forKey: key) else { exit(EXIT_FAILURE) }
     print(prettify ? value.prettifiedJSON() : value)
+    exit(EXIT_SUCCESS)
   }
 
   $0.command("set",
@@ -41,6 +43,7 @@ Group {
   ) { (path, id, key, value) in
     let mmkv = MMKV.init(mmapID: id, relativePath: path)!
     mmkv.set(value, forKey: key)
+    exit(EXIT_SUCCESS)
   }
 
   $0.command("delete",
@@ -50,7 +53,9 @@ Group {
              description: "Delete key value"
   ) { path, id, key in
     let mmkv = MMKV.init(mmapID: id, relativePath: path)!
+    guard mmkv.contains(key: key) else { exit(EXIT_FAILURE) }
     mmkv.removeValue(forKey: key)
+    exit(EXIT_SUCCESS)
   }
 
   $0.command("reset",
@@ -60,6 +65,7 @@ Group {
   ) { path, id in
     let mmkv = MMKV.init(mmapID: id, relativePath: path)!
     mmkv.clearAll()
+    exit(EXIT_SUCCESS)
   }
 
   $0.command("dump",
@@ -75,11 +81,11 @@ Group {
     var table = TextTable(columns: [key, value])
     mmkv.enumerateKeys() { key, stop in
       let value = mmkv.string(forKey: key) ?? "no value"
-      let row = (prettify ? value.prettifiedJSON() : value).truncated(limit: truncate > 0 ? truncate : Int.max)
+      let row = (prettify ? value.prettifiedJSON() : value).truncate(limit: truncate > 0 ? truncate : Int.max)
       table.addRow(values: [key, row])
     }
     print(table.render())
+    exit(EXIT_SUCCESS)
   }
-
 }.run("0.2.0")
 
