@@ -2,6 +2,13 @@
 
 A command line utility to access Tencent's [MMKV](https://github.com/Tencent/MMKV) key-value stores.
 
+## Installation
+
+```
+$ brew tap topkan/homebrew-tap
+$ brew install mmkv-cli
+```
+
 ## Purpose
 
 This tool can be used to inspect keys, get, set and delete keys in MMKV store files. It can also clear the entire store or dump all keys and their values.
