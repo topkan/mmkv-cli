@@ -1,6 +1,6 @@
 # mmkv-cli
 
-A command line utility to access Tencent's [MMKV](https://github.com/Tencent/MMKV) key-value stores.
+A macOS command line utility to access Tencent's [MMKV](https://github.com/Tencent/MMKV) key-value stores.
 
 ## Purpose
 
