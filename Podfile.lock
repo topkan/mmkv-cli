@@ -1,20 +1,28 @@
 PODS:
   - Commander (0.9.1)
   - MMKV (1.0.23)
+  - RainbowSwift (3.0.0)
+  - SwiftyTextTable (0.8.0)
 
 DEPENDENCIES:
-  - Commander
-  - MMKV
+  - Commander (= 0.9.1)
+  - MMKV (= 1.0.23)
+  - RainbowSwift (= 3.0)
+  - SwiftyTextTable
 
 SPEC REPOS:
   trunk:
     - Commander
     - MMKV
+    - RainbowSwift
+    - SwiftyTextTable
 
 SPEC CHECKSUMS:
   Commander: 723330cf3697b604c00afb9db9576be81a03c501
   MMKV: 031ae51aedc0af1b250922f7ed8a6b6ee2f94c4c
+  RainbowSwift: df9650640fb94be0e39fe5f4d4d2673f70cb434c
+  SwiftyTextTable: cf01ac024436e553084d45e16b5cfc5a80116bdd
 
-PODFILE CHECKSUM: eb24ab0a20f703e668d8cabf3d11ac1d4cf900d6
+PODFILE CHECKSUM: e922e597b3dec45403379adc3cf09dccd31e63f3
 
 COCOAPODS: 1.8.4

@@ -8,6 +8,7 @@
 
 import Foundation
 import Commander
+import SwiftyTextTable
 
 Group {
   $0.command("keys",
@@ -22,11 +23,13 @@ Group {
   $0.command("get",
              Option<String>("path", default: "./", description: "Path to the MMKV file"),
              Option<String>("id", default: "mmkv.default", description: "Id of the MMKV file"),
+             Flag("prettify-json", flag: "p"),
              Argument<String>("key", description: "Name of the key to get"),
              description: "Get key value"
-  ) { path, id, key in
+  ) { path, id, prettify, key in
     let mmkv = MMKV.init(mmapID: id, relativePath: path)!
-    print(mmkv.string(forKey: key) ?? "no value")
+    let value = mmkv.string(forKey: key) ?? "no value"
+    print(prettify ? value.prettifiedJSON() : value)
   }
 
   $0.command("set",
@@ -39,5 +42,44 @@ Group {
     let mmkv = MMKV.init(mmapID: id, relativePath: path)!
     mmkv.set(value, forKey: key)
   }
-}.run("0.1.0")
+
+  $0.command("delete",
+             Option<String>("path", default: "./", description: "Path to the MMKV file"),
+             Option<String>("id", default: "mmkv.default", description: "Id of the MMKV file"),
+             Argument<String>("key", description: "Name of the key to delete"),
+             description: "Delete key value"
+  ) { path, id, key in
+    let mmkv = MMKV.init(mmapID: id, relativePath: path)!
+    mmkv.removeValue(forKey: key)
+  }
+
+  $0.command("reset",
+             Option<String>("path", default: "./", description: "Path to the MMKV file"),
+             Option<String>("id", default: "mmkv.default", description: "Id of the MMKV file"),
+             description: "Delete all keys"
+  ) { path, id in
+    let mmkv = MMKV.init(mmapID: id, relativePath: path)!
+    mmkv.clearAll()
+  }
+
+  $0.command("dump",
+             Option<String>("path", default: "./", description: "Path to the MMKV file"),
+             Option<String>("id", default: "mmkv.default", description: "Id of the MMKV file"),
+             Option<Int>("truncate", default: 100, description: "Truncate value columns. Set to '0' to surpress truncation"),
+             Flag("prettify-json", flag: "p"),
+             description: "Dump all keys and their values"
+  ) { path, id, truncate, prettify in
+    let mmkv = MMKV.init(mmapID: id, relativePath: path)!
+    let key = TextTableColumn(header: "Key")
+    let value = TextTableColumn(header: "Value")
+    var table = TextTable(columns: [key, value])
+    mmkv.enumerateKeys() { key, stop in
+      let value = mmkv.string(forKey: key) ?? "no value"
+      let row = (prettify ? value.prettifiedJSON() : value).truncated(limit: truncate > 0 ? truncate : Int.max)
+      table.addRow(values: [key, row])
+    }
+    print(table.render())
+  }
+
+}.run("0.2.0")
 

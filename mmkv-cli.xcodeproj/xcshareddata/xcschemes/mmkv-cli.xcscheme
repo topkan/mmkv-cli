@@ -52,16 +52,16 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "keys"
+            argument = "get user:SANDBOX:0"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "--path /Users/tomikankaanpaa/Library/Developer/CoreSimulator/Devices/3E733363-957E-48FF-A0F0-66CABB031771/data/Containers/Data/Application/7AEFEC0F-3F27-4949-A7A4-21CFB632DC99/Documents/mmkv"
+            argument = "--path /Users/tomikankaanpaa/Library/Developer/CoreSimulator/Devices/3E733363-957E-48FF-A0F0-66CABB031771/data/Containers/Data/Application/F8BC0894-0AD3-4341-BAFB-B3C85E82D74D/Documents/mmkv/"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "--version"
-            isEnabled = "NO">
+            argument = "-p"
+            isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "set"

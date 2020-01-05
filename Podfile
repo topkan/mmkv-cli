@@ -3,6 +3,7 @@ platform :osx, '10.10'
 target 'mmkv-cli' do
   pod 'MMKV', '1.0.23'
   pod 'Commander', '0.9.1'
+  pod 'SwiftyTextTable'
 end
 
 post_install do |installer|

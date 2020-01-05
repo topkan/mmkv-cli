@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		595832736B29A1C38458C4D4 /* libPods-mmkv-cli.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46401A14269C9CC2BA72440F /* libPods-mmkv-cli.a */; };
+		E668721323BF857100208436 /* String+truncate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668721223BF857100208436 /* String+truncate.swift */; };
+		E668721523C0BCED00208436 /* String+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668721423C0BCED00208436 /* String+JSON.swift */; };
 		E6CE52E123B7E5B400EA7651 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CE52E023B7E5B400EA7651 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		304F39F89BC0A940DC1F873C /* Pods-mmkv-cli.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mmkv-cli.debug.xcconfig"; path = "Target Support Files/Pods-mmkv-cli/Pods-mmkv-cli.debug.xcconfig"; sourceTree = "<group>"; };
 		46401A14269C9CC2BA72440F /* libPods-mmkv-cli.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mmkv-cli.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9826A1B5140DFCD5B1AE93E0 /* Pods-mmkv-cli.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mmkv-cli.release.xcconfig"; path = "Target Support Files/Pods-mmkv-cli/Pods-mmkv-cli.release.xcconfig"; sourceTree = "<group>"; };
+		E668721223BF857100208436 /* String+truncate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+truncate.swift"; sourceTree = "<group>"; };
+		E668721423C0BCED00208436 /* String+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+JSON.swift"; sourceTree = "<group>"; };
 		E6CE52DD23B7E5B400EA7651 /* mmkv-cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "mmkv-cli"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CE52E023B7E5B400EA7651 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E6CE52E723B7F75000EA7651 /* mmkv-cli-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mmkv-cli-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 			children = (
 				E6CE52E023B7E5B400EA7651 /* main.swift */,
 				E6CE52E723B7F75000EA7651 /* mmkv-cli-Bridging-Header.h */,
+				E668721223BF857100208436 /* String+truncate.swift */,
+				E668721423C0BCED00208436 /* String+JSON.swift */,
 			);
 			path = "mmkv-cli";
 			sourceTree = "<group>";
@@ -173,7 +179,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E668721323BF857100208436 /* String+truncate.swift in Sources */,
 				E6CE52E123B7E5B400EA7651 /* main.swift in Sources */,
+				E668721523C0BCED00208436 /* String+JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
