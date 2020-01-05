@@ -87,10 +87,9 @@ Prettify JSON key value. Default is no prettification.
 
 Truncate values to specified width. Default is `100`. Specifying `0` will surpress any truncation.
 
-
 ## License
 
-mmkv-cli is made available under the terms of the MIT license.  See the
+mmkv-cli is made available under the terms of the Apache 2.0 license.  See the
 LICENSE file that accompanies this distribution for the full text of the
 license.
 
