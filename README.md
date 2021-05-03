@@ -94,6 +94,13 @@ Prettify JSON key value. Default is no prettification.
 
 Truncate values to specified width. Default is `100`. Specifying `0` will surpress any truncation.
 
+## Example
+
+```
+$ cd `xcrun simctl get_app_container booted <app id> data`/Library/mmkv
+$ mmkv-cli get app-state --prettify-json --id default
+```
+
 ## License
 
 mmkv-cli is made available under the terms of the Apache 2.0 license.  See the
